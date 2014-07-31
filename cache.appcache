@@ -1,9 +1,9 @@
 # Disable cache? I don't know if this works
 CACHE MANIFEST
-index.html
-page/addons.html
-page/doc.html
-page/download.html
-page/intro.html
-page/rights.html
-page/style.css
+#index.html
+#page/addons.html
+#page/doc.html
+#page/download.html
+#page/intro.html
+#page/rights.html
+#page/style.css
