@@ -1,0 +1,31 @@
+<FilesMatch "\.(html|htm|js|css)$">
+FileETag None
+<ifModule mod_headers.c>
+Header unset ETag
+Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+Header set Pragma "no-cache"
+Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+</ifModule>
+</FilesMatch>
+
+ErrorDocument 400 http://httpcats.herokuapp.com/400
+ErrorDocument 401 http://httpcats.herokuapp.com/401
+ErrorDocument 402 http://httpcats.herokuapp.com/402
+ErrorDocument 403 http://httpcats.herokuapp.com/403
+ErrorDocument 404 http://httpcats.herokuapp.com/404
+ErrorDocument 405 http://httpcats.herokuapp.com/405
+ErrorDocument 406 http://httpcats.herokuapp.com/406
+ErrorDocument 407 http://httpcats.herokuapp.com/407
+ErrorDocument 408 http://httpcats.herokuapp.com/408
+ErrorDocument 409 http://httpcats.herokuapp.com/409
+ErrorDocument 410 http://httpcats.herokuapp.com/410
+ErrorDocument 411 http://httpcats.herokuapp.com/411
+ErrorDocument 412 http://httpcats.herokuapp.com/412
+ErrorDocument 413 http://httpcats.herokuapp.com/413
+ErrorDocument 414 http://httpcats.herokuapp.com/414
+ErrorDocument 500 http://httpcats.herokuapp.com/500
+ErrorDocument 501 http://httpcats.herokuapp.com/501
+ErrorDocument 502 http://httpcats.herokuapp.com/502
+ErrorDocument 503 http://httpcats.herokuapp.com/503
+ErrorDocument 504 http://httpcats.herokuapp.com/504
+ErrorDocument 505 http://httpcats.herokuapp.com/505

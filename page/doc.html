@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title>IFME - Documentation</title>
+</head>
+<body>
+	<h1>Documentation</h1>
+	<p>Everything you need!</p>
+	<h3><a>Introduction</a></h3>
+	<ul>
+	<h4>Navigate</h4>
+	<li><a href="doc.html#how">How to use (basic)</a></li>
+	<li><a href="doc.html#addons">Create own addon</a></li>
+	<li><a href="doc.html#faq">FAQ</a></li>
+	</ul>
+	<h3 id="how"><a>Basics</a></h3>
+    <h5><a>How to use</a></h5>
+    <a>IFME was design to "simple to use" term, GUI are look is similar like Handbreak, x264vfw, etc... Here the basic:</a>
+	<div><img src="../images/help/UI-01.png"></img></div>
+	<a>Video and Audio configuration are pretty simple to use</a>
+	<div><img src="../images/help/UI-02.png"></img></div>
+	<div><img src="../images/help/UI-03.png"></img></div>
+	<a>Subtitle... only support one subtitle > one video<br>current limitation total queue must equal to total subtitle, if you have 10 video, must have 10 subtitle<a>
+    <div><img src="../images/help/UI-04.png"></img></div>
+	<a>Attachment! Add all your custom font!</a>
+	<div><img src="../images/help/UI-05.png"></img></div>
+	<h3 id="addons">Addons</h3>
+	<h5><a>Make your own addons</a></h5>
+	<a>Currently IFME only support addon for audio encoder, to make one is very simple, follow this guide-line</a>
+	<ul>
+		<li><a>First, create a folder under "addons" folder, for example "mp3"<br><div><img src="../images/addon/addon_new.png"></img></div></a></li>
+		<br>
+		<li><a>Download this <a href="../stuff/addon.ini">sample INI</a> file and save it to "mp3" folder (a folder that you created)<br><div><img src="../images/addon/addon_new1.png"></img></div></a></li>
+		<br>
+		<li><a>Download a command-line encoder, for now we going to download MP3 by LAME (remember, we need a binary)<br><div><img src="../images/addon/addon_lame.png"></img></div></a></li>
+		<br>
+		<li><a>Extract all to your MP3 addon folder. ".\addons\mp3\"</a></li>
+		<li><a>This tricky part =P Hold Shift and Right Click, and click "Open command window here"</a></li>
+		<li><a>And then type "lame.exe --help". this will display available basic command<br><div><img src="../images/addon/addon_cmd.png"></img></div></a></li>
+		<br>
+		<li><a>For example, LAME require: lame.exe -b 128 "in_file.wav" "out_file.mp3"</a></li>
+		<li><a>Open "addon.ini" file with your favourite Notepad and Edit:<br><div><img src="../images/addon/addon.png"></img></div></a></li>
+		<br>
+		<li><a>Fill all, (you need a web server that can host, try dropbox web hosting (http://my.droppages.com/)<br>☒ type = audio (obviously)<br>☒ Profile, pretty basic info for encoder, that container showing that which container support, MP4 or MKV (type in lower case)<br>☒ Provider, name = enter your name.<br>☒ update = a HTTP url path that contain <a href="http://ifme.sourceforge.net/update/addons/ogg.txt">latest version</a>, a txt file only contain version, refer to [profile]<br>☒ download = a HTTP url path that IFME will download if txt contain latest version.<br>☒ Data, app = a exe file name,<br>☒ cmd = a basic command, place holder: "{0}" holds LAME MP3 bitrate, "|{1}.mp3|" output file, "|{2}|" input file, "{3}" extra command that refer from "adv" below.<br>☒ quality = enter a valid bitrate value<br>☒ default = choose the best bitrate value</a></li>
+		<br>
+		<li><a>Once done, save it. Go back addons folder and start "zip" your mp3 addon (no rar or 7z)<br><div><img src="../images/addon/addon_zip.png"></img></div></a></li>
+		<br>
+		<li><a>You may rename the file and extension to "mp3byme.ifz" (.ifz is extension that FIME understand)</a></li>
+		<br>
+		<li><a>Publish it... You can submit to <a href="https://www.facebook.com/internetfriendlymediaencoder">Facebook page</a> to get listed at our website... and yet submission need to be approved before become official. (check if this addon is working or not)</a></li>
+	</ul>
+	<br>
+	<br>
+	<h3 id="faq">Help</h3>
+	<h5><a>FAQ</a></h5>
+	<ul> <!-- <li><a></a></li> <a href=""></a> -->
+        <li><a>Why IFME don't have option to change video resolution?<br>IFME was design to keep video as original as possible, decrease resolution is bad, up-scale (increase) resolution also very bad!</a></li>
+		<br>
+		<li><a>Latest IFME don't have option to change video bit depth!<br>If 10bit to 8bit seem acceptable, due x265 limitation, file will grow bigger then original! Never convert 8bit to 10bit, no make sense!</a></li>
+		<br>
+		<li><a>IFME don't have option to change video fps!<br>Better don't, increase or decrease it make bad for video motion, let say a video in 30fps, increase to 60fps it make each 2 frame are equal, decrease to 25fps or lower will cause choppy, not smooth, IFME keep video original as is.</a></li>
+		<br>
+		<li><a>Can I encode my game recording?<br>Yes! Yes you can, so far video Decoder only accept from FRAPS, if you record from AMD Gaming Evolve or nVidia Shadow Play, it may cause error, even Adobe Première can't detect!</a></li>
+		<br>
+		<li><a>I can't upload to YouTube or Facebook!<br>H265 or HEVC still new codec, they don't have decoder to decode your uploaded video.</a></li>
+		<br>
+		<li><a>Only one subtitle for each video?<br>For "simple to use" term, if you want to add more, use mkvmerge to add more!</a></li>
+		<br>
+		<li><a>Why MP4 dont accept subtitle?<br>MP4 container is very limited, basically support only SRT format, just use MKV, much better.</a></li>
+		<br>
+		<li><a>Why encode so slow!?<br>It's because encoder too powerful to shrink your video size into half, they need more power :)</a></li>
+	</ul>
+	<br>
+	<br>
+</body>
+</html>
