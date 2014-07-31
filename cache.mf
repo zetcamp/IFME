@@ -1,8 +1,6 @@
-# Disable cache? I don't know if this works
-
-# I don't want you to cache it!
+# HTML5 prefer caching, client side effect
+# I don't want you to cache it! so Ignore it!
 CACHE MANIFEST
-
 #index.html
 #page/addons.html
 #page/doc.html
